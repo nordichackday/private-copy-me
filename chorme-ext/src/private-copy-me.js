@@ -1,13 +1,21 @@
 var apiEndpoint = "http://40.68.29.184/download"
 
-function createButton(currentURL) {
+function createButton(currentURL, tagSelector, buttonHtml) {
 	var downloadURL = apiEndpoint + "?url=" + encodeURIComponent(currentURL);
 	var vhsButton = $('<span>').attr("id", "vhs-button");
-	vhsButton.html('<a id="downloadlink" href="#"></a>');
+	vhsButton.html(buttonHtml);
 
-	$('h1.series-title').append(vhsButton);
+	$(tagSelector).append(vhsButton);
 	console.debug(downloadURL)
 	addClickHandlers(downloadURL);
+}
+
+function createNrkButton(currentURL) {
+	createButton(currentURL, 'h1.series-title', '<a id="downloadlink" class="downloadIcon" href="#"></a>')
+}
+
+function createSvtButton(currentURL) {
+	createButton(currentURL, 'div.play_video-area-aside__info', '<a id="downloadlink" class="play_video-area-aside__title-page-link" href="#">Ladda ned videon</a>')
 }
 
 function redirect (url) {
@@ -28,10 +36,21 @@ function alignHttpsToHttp(url) {
 	return url;
 }
 
+function isNrkVideoPage(url) {
+	return url.indexOf("tv.nrk.no/serie/") > -1 || url.indexOf("tv.nrk.no/program/") > -1
+}
+
+function isSvtVideoPage(url) {
+	return url.indexOf("svtplay.se/video/") > -1
+}
+
 $(document).ready(function() {
 	var currentURL = window.location.href;
-	if (currentURL.indexOf("tv.nrk.no/serie/") > -1 || currentURL.indexOf("tv.nrk.no/program/") > -1) {
+	if (isNrkVideoPage(currentURL)) {
 		console.debug(alignHttpsToHttp(currentURL))
-		createButton(alignHttpsToHttp(currentURL));
+		createNrkButton(alignHttpsToHttp(currentURL));
+	} else if (isSvtVideoPage(currentURL)) {
+		console.debug(alignHttpsToHttp(currentURL))
+		createSvtButton(alignHttpsToHttp(currentURL));
 	}
 });
