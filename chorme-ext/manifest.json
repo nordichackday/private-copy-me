@@ -3,7 +3,7 @@
   "name": "Private Copy Me",
   "description": "Easy to download button.",
   "version": "1.0",
-  "web_accessible_resources": ["/content/*"],
+  "web_accessible_resources": ["/content/*", "/images/*"],
   "background": {
     "scripts": ["src/jquery-2.1.3.min.js", "src/background.js"]
   },  
