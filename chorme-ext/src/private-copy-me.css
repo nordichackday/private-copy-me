@@ -1,0 +1,31 @@
+#oda-toolbar {
+	width: 100%;
+	height: 48px;
+	display: block;
+	background: rgba(8,12,22,.1);
+}
+
+#oda-toolbar ul {
+	list-style: none;
+	float: right;
+	padding: 0;
+	margin-right: 20px;
+	padding-top: 5px;
+}
+
+#oda-toolbar ul li {
+	display: inline-block;
+}
+
+#oda-toolbar ul li a {
+	border-bottom: 3px solid transparent; 	
+}
+
+#oda-toolbar ul li a:hover {
+	border-bottom: 3px solid rgba(0,185,242,.4); 
+}
+
+.nav-link:active, .nav-link:focus, .nav-link:hover {
+  	border-bottom: 3px solid rgba(0,185,242,.4); 
+  	color: #00b9f2;
+}

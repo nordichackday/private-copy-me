@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Private Copy Me",
+  "description": "Easy to download button.",
+  "version": "1.0",
+  "web_accessible_resources": ["/content/*"],
+  "background": {
+    "scripts": ["src/jquery-2.1.3.min.js", "src/background.js"]
+  },  
+  "content_scripts": [
+    {
+      "matches": ["https://tv.nrk.no/*", "http://svtplay.se/*", "https://svtplay.se/*"],
+      "css": ["/src/private-copy-me.css"],
+      "js": ["/src/jquery-2.1.3.min.js", "/src/private-copy-me.js"]
+    }    
+  ],  
+  "permissions": [
+    "activeTab", "tabs", "storage",
+    "https://tv.nrk.no/*",  "http://svtplay.se/*"
+  ],
+  "icons": { "16": "/images/oda-16.png", "128": "/images/oda-128.png" }
+}
