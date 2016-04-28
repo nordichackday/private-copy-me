@@ -1,8 +1,8 @@
 
 chrome.extension.onRequest.addListener(function(request, sender, callback) {
     if (request.type == "PCM.download.NRK") {
-    	//chrome.tabs.update(sender.tab.id, {url: request.url});
-    	console.debug("You have now downloaded this program!");
+    	// alert("You have now downloaded this program!");
+        chrome.tabs.update(sender.tab.id, {url: request.url});
     } else {
         callback("OMG wrong msg");
     }

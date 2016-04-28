@@ -5,23 +5,19 @@
 	background: rgba(8,12,22,.1);
 }
 
-#oda-toolbar ul {
+#oda-toolbar div {
 	list-style: none;
 	float: right;
 	padding: 0;
 	margin-right: 20px;
-	padding-top: 5px;
+	padding-top: 15px;
 }
 
-#oda-toolbar ul li {
-	display: inline-block;
-}
-
-#oda-toolbar ul li a {
+#oda-toolbar div a {
 	border-bottom: 3px solid transparent; 	
 }
 
-#oda-toolbar ul li a:hover {
+#oda-toolbar div a:hover {
 	border-bottom: 3px solid rgba(0,185,242,.4); 
 }
 
