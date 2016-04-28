@@ -1,4 +1,4 @@
-var apiEndpoint = "http://localhost:8080/download"
+var apiEndpoint = "http://40.68.29.184/download"
 
 function createButton(currentURL) {
 	var downloadURL = apiEndpoint + "?url=" + encodeURIComponent(currentURL);
