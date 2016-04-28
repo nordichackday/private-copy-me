@@ -1,4 +1,3 @@
-
 chrome.extension.onRequest.addListener(function(request, sender, callback) {
     if (request.type == "PCM.download.NRK") {
     	// alert("You have now downloaded this program!");

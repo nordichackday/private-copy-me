@@ -1,11 +1,11 @@
 var apiEndpoint = "http://localhost:8000/endpoint"
 
 function createToolBar(callback) {
-	var oda = $('<div>').attr("id", "oda-toolbar");
-	$('body').prepend(oda);
+	var vhsButton = $('<span>').attr("id", "vhs-button").attr("class", "icon");
+	$('h1.series-title').append(vhsButton);
 
 	var url = chrome.extension.getURL("content/button.html");
-	$('#oda-toolbar').load(url, function() {
+	$('#vhs-button').load(url, function() {
 		callback();
 	});
 }
