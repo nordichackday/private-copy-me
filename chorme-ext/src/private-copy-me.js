@@ -1,39 +1,28 @@
-var apiEndpoint = "http://localhost:8000/endpoint"
+var apiEndpoint = "http://localhost:8080/download"
 
-function createToolBar(callback) {
+function createButton(currentURL) {
+	var downloadURL = apiEndpoint + "?url=" + encodeURIComponent(currentURL);
 	var vhsButton = $('<span>').attr("id", "vhs-button");
 	vhsButton.html('<a id="downloadlink" href="#"></a>');
 	
 	$('h1.series-title').append(vhsButton);
-
-	var url = chrome.extension.getURL("content/button.html");
-	callback();
-	// $('#vhs-button').load(url, function() {
-	// 	callback();
-	// });
+	addClickHandlers(downloadURL);
 }
 
 function redirect (url) {
 	chrome.extension.sendRequest({type: "PCM.download.NRK", url: url});	
 }
 
-function addClickHandlers() {	
-	var currentUrl = window.location.href;
-	var requestUrl = apiEndpoint + "?url=" + currentUrl
-
+function addClickHandlers(downloadURL) {	
 	$('a#downloadlink').unbind('click');
 	$('a#downloadlink').on('click', function(event) {
-		redirect(requestUrl);
+		redirect(downloadURL);
 	});		
 }
 
 $(document).ready(function() {
-	var url = window.location.href;
-
-	if (url.indexOf("tv.nrk.no/serie/") > -1 || url.indexOf("tv.nrk.no/program/") > -1) {
-		createToolBar(function() {
-			addClickHandlers();
-		});
+	var currentURL = window.location.href;
+	if (currentURL.indexOf("tv.nrk.no/serie/") > -1 || currentURL.indexOf("tv.nrk.no/program/") > -1) {
+		createButton(currentURL);
 	}
-	
 });
