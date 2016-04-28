@@ -18,5 +18,5 @@
     "activeTab", "tabs", "storage",
     "https://tv.nrk.no/*",  "http://svtplay.se/*"
   ],
-  "icons": { "16": "/images/oda-16.png", "128": "/images/oda-128.png" }
+  "icons": { "16": "/images/private-copy-me-16.png", "128": "/images/private-copy-me-128.png" }
 }

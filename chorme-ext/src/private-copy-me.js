@@ -1,9 +1,8 @@
 var apiEndpoint = "http://localhost:8000/endpoint"
 
 function createToolBar(callback) {
-	var img =  chrome.extension.getURL("/images/record-hover.png")
 	var vhsButton = $('<span>').attr("id", "vhs-button");
-	vhsButton.html('<a id="downloadlink" href="#"><img src=' + img + ' /></a>');
+	vhsButton.html('<a id="downloadlink" href="#"></a>');
 	
 	$('h1.series-title').append(vhsButton);
 

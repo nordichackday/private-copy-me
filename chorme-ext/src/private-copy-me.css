@@ -1,5 +1,13 @@
-
-span a img {
-    width: 32px;
-    display: inline-block;
+#downloadlink {
+    background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-idle.png');
+    padding-left: 16px;
+    padding-right: 16px;
+    display: inline;
+    background-position: center; 
+    background-repeat: no-repeat;
 }
+
+#downloadlink:hover {
+    background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-hover.png');
+}
+
