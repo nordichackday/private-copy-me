@@ -1,5 +1,5 @@
-#downloadlink {
     background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-idle.png');
+.downloadIcon {
     padding-left: 16px;
     padding-right: 16px;
     display: inline;
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
 }
 
-#downloadlink:hover {
     background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-hover.png');
+.downloadIcon:hover {
 }
 
