@@ -1,5 +1,5 @@
-    background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-idle.png');
 .downloadIcon {
+    background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-idle.png');
     padding-left: 16px;
     padding-right: 16px;
     display: inline;
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
 }
 
-    background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-hover.png');
 .downloadIcon:hover {
+    background-image: url('chrome-extension://__MSG_@@ppcmondmdkpkkafbmmphjpnpkbejakhp/images/download-hover.png');
 }
 
